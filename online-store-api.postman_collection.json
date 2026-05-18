@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Online Store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Products",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products"
+      }
+    },
+    {
+      "name": "Get Single Product",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products/1"
+      }
+    },
+    {
+      "name": "Filter Products",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products?category=elektronik"
+      }
+    },
+    {
+      "name": "Sort Products ASC",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products?sort=price_asc"
+      }
+    },
+    {
+      "name": "Limit Products",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products?limit=2"
+      }
+    },
+    {
+    "name": "Create Order",
+    "request": {
+        "method": "POST",
+        "header": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        }
+        ],
+        "body": {
+        "mode": "raw",
+        "raw": "{\\n  \\\"userId\\\": 1,\\n  \\\"products\\\": [1, 2]\\n}"
+        },
+        "url": "http://localhost:3000/api/v1/orders"
+    }
+    },
+    {
+      "name": "Delete Order",
+      "request": {
+        "method": "DELETE",
+        "url": "http://localhost:3000/api/v1/orders/1"
+      }
+    },
+    {
+      "name": "Get Orders",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/users/1/orders"
+      }
+    },
+    {
+      "name": "Get Product Reviews",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/products/1/reviews"
+      }
+    },
+    {
+      "name": "404 Test",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:3000/api/v1/random"
+      }
+    }
+  ]
+}
