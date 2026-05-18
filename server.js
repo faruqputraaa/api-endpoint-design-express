@@ -60,7 +60,6 @@ router.get("/products", (req, res) => {
 
   let result = [...products];
 
-  // FILTER CATEGORY
   if (category) {
     const value =
       category.toLowerCase();
@@ -72,21 +71,18 @@ router.get("/products", (req, res) => {
     );
   }
 
-  // SORT PRICE ASC
   if (sort === "price_asc") {
     result.sort(
       (a, b) => a.price - b.price
     );
   }
 
-  // SORT PRICE DESC
   if (sort === "price_desc") {
     result.sort(
       (a, b) => b.price - a.price
     );
   }
 
-  // LIMIT DATA
   if (limit) {
     result = result.slice(
       0,
